@@ -1,0 +1,42 @@
+.container {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  left: 0%;
+  top: 0%;
+  width: 50%;
+  z-index: 30;
+  height: 100vh;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  padding: 1rem;
+}
+
+.login-button {
+  align-self: center;
+  width: 80%;
+  background-color: #000;
+  padding: 0.75rem 0.75rem;
+  border-radius: 2rem;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.close-button {
+  align-self: flex-end;
+  margin-bottom: 1rem;
+  color: #000;
+  font-size: 1.2rem;
+  background-color: transparent;
+  border: none;
+}
+
+.container span {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}

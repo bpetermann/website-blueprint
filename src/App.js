@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+
+import styles from './App.module.css';
+import AdBanner from './components/AdBanner';
+import Menue from './components/Menue';
+import MenueModal from './components/Modal/MenueModal';
+import Title from './components/Title';
 
 function App() {
+  const [showMenueModal, setShowMenueModal] = useState(false);
+
+  const menueModalToggleHandler = () => {
+    console.log('click');
+    setShowMenueModal((prevState) => !prevState);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={styles.container}>
+      {showMenueModal && <MenueModal onClick={menueModalToggleHandler}/>}
+      <AdBanner />
+      <Title />
+      <Menue onClick={menueModalToggleHandler} />
     </div>
   );
 }

@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0.0625rem solid #d0d1d3;
+  background-color: #fff;
+  width: 50%;
+  margin: 1rem auto;
+}
+
+.container h3 {
+  font-size: 1.5rem;
+}
+
+@media (min-width: 40rem) {
+  .container {
+    width: 65%;
+  }
+  .container h3 {
+    font-size: inherit;
+  }
+}
