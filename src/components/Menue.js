@@ -1,3 +1,4 @@
+import React from 'react';
 import styles from './Menue.module.css';
 
 const Menue = (props) => {

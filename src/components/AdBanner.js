@@ -1,3 +1,4 @@
+import React from 'react';
 import styles from './AdBanner.module.css';
 
 const AdBanner = (props) => {

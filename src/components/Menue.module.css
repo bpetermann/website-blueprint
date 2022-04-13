@@ -4,7 +4,7 @@
   width: 100%;
   height: 3rem;
   background-color: #fff;
-  border-bottom: 0.0625rem solid #d0d1d3;
+  border: 0.0625rem solid #d0d1d3;
 }
 
 .toggle-button {

@@ -3,51 +3,34 @@ import React, { useState } from 'react';
 import styles from './Slideshow.module.css';
 
 const Slideshow = (props) => {
-  const mobileScreen = window.matchMedia('(min-width: 40rem)').matches;
-  const [visibleSlideshowItems, setVisibleSlideshowItems] = useState({
-    slideStart: 0,
-    slideEnd: 4,
-    limit: props.content.length,
-  });
-  let slideshowOutput;
+  const [slideshowArray, setslideshowArray] = useState(props.content);
 
-  const slideShowCountUpHandler = () => {
-    setVisibleSlideshowItems((prevState) => ({
-      ...prevState,
-      slideStart: visibleSlideshowItems.slideStart + 1,
-      slideEnd: visibleSlideshowItems.slideEnd + 1,
-    }));
+  const oneSlideUpHandler = () => {
+    const firstElement = slideshowArray.shift();
+    const newArray = [...slideshowArray, firstElement];
+    setslideshowArray(newArray);
   };
 
-  const slideShowCountDownHandler = () => {
-    setVisibleSlideshowItems((prevState) => ({
-      ...prevState,
-      slideStart: visibleSlideshowItems.slideStart - 1,
-      slideEnd: visibleSlideshowItems.slideEnd - 1,
-    }));
+  const oneSlideDownHandler = () => {
+    const lastElement = slideshowArray.pop();
+    const newArray = [lastElement, ...slideshowArray];
+    setslideshowArray(newArray);
   };
 
-  if (mobileScreen) {
-    slideshowOutput = props.content.slice(
-      visibleSlideshowItems.slideStart,
-      visibleSlideshowItems.slideEnd
-    );
-  } else
-    slideshowOutput = props.content.slice(
-      visibleSlideshowItems.slideStart,
-      visibleSlideshowItems.slideEnd - 2
-    );
+  console.log(slideshowArray);
+
+  const slideshowOutput = slideshowArray.slice(0, 3);
 
   return (
     <div className={styles.container}>
-      {visibleSlideshowItems.slideStart > 0 && (
-        <button
-          className={styles['count-down']}
-          onClick={slideShowCountDownHandler}
-        >
-          &#8592;
-        </button>
-      )}
+      <button className={styles['count-down']}>
+        <img
+          src={require('../images/arrow-left.png')}
+          alt='Arrow key-left'
+          className={styles['count-down-button']}
+          onClick={oneSlideDownHandler}
+        />
+      </button>
       {slideshowOutput.map((item) => {
         return (
           <div className={styles['content-container']} key={item}>
@@ -55,14 +38,14 @@ const Slideshow = (props) => {
           </div>
         );
       })}
-      {visibleSlideshowItems.slideEnd <= visibleSlideshowItems.limit && (
-        <button
-          className={styles['count-up']}
-          onClick={slideShowCountUpHandler}
-        >
-          &#8594;
-        </button>
-      )}
+      <button className={styles['count-up']}>
+        <img
+          src={require('../images/arrow-right.png')}
+          alt='Arrow key-right'
+          className={styles['count-up-button']}
+          onClick={oneSlideUpHandler}
+        />
+      </button>
     </div>
   );
 };
