@@ -5,7 +5,7 @@ import styles from './App.module.css';
 import AdBanner from './components/AdBanner';
 import Title from './components/Title';
 import Menue from './components/Menue';
-
+import Searchbox from './components/Searchbox';
 import Slideshow from './components/Slideshow';
 
 const DUMMY_ARRAY = [1, 2, 3, 4, 5, 6];
@@ -23,6 +23,7 @@ function App() {
       <AdBanner />
       <Title />
       <Menue onClick={menueModalToggleHandler} />
+      <Searchbox />
       <Slideshow content={DUMMY_ARRAY} />
     </div>
   );
