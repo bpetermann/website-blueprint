@@ -18,8 +18,6 @@ const Slideshow = (props) => {
     setslideshowArray(newArray);
   };
 
-  console.log(slideshowArray);
-
   const slideshowOutput = slideshowArray.slice(0, 3);
 
   return (

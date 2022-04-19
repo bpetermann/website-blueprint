@@ -29,10 +29,15 @@
 .close-button {
   align-self: flex-end;
   margin-bottom: 1rem;
-  color: #000;
+  color: #666;
   font-size: 1.2rem;
   background-color: transparent;
   border: none;
+}
+
+.close-button:hover {
+  cursor: pointer;
+  color: #000;
 }
 
 .container span {
