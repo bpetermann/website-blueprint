@@ -34,7 +34,7 @@ const SlideshowItem = (props) => {
               </button>
             )}
 
-            {item}
+            <span className={styles.content}>{item}</span>
           </div>
         );
       })}

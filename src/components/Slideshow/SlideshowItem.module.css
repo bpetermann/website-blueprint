@@ -1,33 +1,42 @@
 .content-container {
   box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 30%;
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+    '. . button'
+    '. content . '
+    '. . .';
   margin-left: 0.5rem;
   margin-right: 0.5rem;
   font-size: 1.75rem;
   opacity: 0.8;
-  background-color: #fff;
   border: 0.0625rem solid #d0d1d3;
+  background-color: #fff;
 }
 
 .wishlist-button {
+  grid-area: button;
   width: 2rem;
   height: 2rem;
   padding: 0;
   background-color: transparent;
   border: none;
-  position: relative;
-  top: -5rem;
-  left: 8rem;
 }
 
-.wishlist-button {
+.wishlist-button:hover {
   cursor: pointer;
 }
 
+.content {
+  grid-area: content;
+  align-self: center;
+  justify-self: center;
+}
+
 .heart-image {
+  padding-top: 0.5rem;
   width: 2rem;
   height: 2rem;
   filter: invert(48%) sepia(5%) saturate(17%) hue-rotate(358deg) brightness(95%)
@@ -55,14 +64,14 @@
 @media (min-width: 40rem) {
   .content-container:first-of-type {
     align-self: none;
-    display: flex;
+    display: grid;
     height: 13rem;
     margin-right: 0.5rem;
     width: 50%;
     animation: none;
   }
   .content-container:nth-of-type(2) {
-    display: flex;
+    display: grid;
     width: 50%;
     height: 13rem;
     margin-left: 0.5rem;
@@ -82,7 +91,7 @@
   }
   .content-container:nth-of-type(2) {
     align-self: center;
-    display: flex;
+    display: grid;
     width: 40%;
     height: 14rem;
     margin-right: 0.5rem;
@@ -95,7 +104,7 @@
   }
 
   .content-container:last-of-type {
-    display: flex;
+    display: grid;
     height: 13rem;
     margin-left: 0.5rem;
     margin-right: 0rem;

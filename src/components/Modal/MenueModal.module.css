@@ -12,6 +12,18 @@
   background-color: white;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
   padding: 1rem;
+  animation: slide-in 400ms ease-out forwards;
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .login-button {
