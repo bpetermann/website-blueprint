@@ -1,0 +1,71 @@
+.containerAll {
+  margin-top: 2rem;
+  display: grid;
+  width: 100%;
+  grid-template-columns: 2rem 1fr 2rem;
+  grid-template-rows: 1fr;
+  grid-template-areas: 'button-down carousel button-up';
+}
+
+.container {
+  grid-area: carousel;
+  height: 13rem;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.container::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 75%;
+  min-width: 10rem;
+  margin-right: 1rem;
+  background-color: #fff;
+  border: 0.0625rem solid #d0d1d3;
+}
+
+@media (min-width: 40rem) {
+  .card {
+    width: 32%;
+  }
+}
+
+.count-up,
+.count-down {
+  border: none;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  width: 0;
+}
+
+.count-up {
+  grid-area: button-up;
+  align-self: center;
+}
+
+.count-down {
+  grid-area: button-down;
+  align-self: center;
+}
+
+.count-up-button,
+.count-down-button {
+  width: 2rem;
+  height: 2rem;
+  z-index: 30;
+  filter: invert(44%) sepia(0%) saturate(159%) hue-rotate(242deg)
+    brightness(88%) contrast(93%);
+}
+.count-up-button {
+  left: 56rem;
+}

@@ -6,6 +6,7 @@ import AdBanner from './components/AdBanner';
 import Title from './components/Title';
 import Menue from './components/Menue';
 import Searchbox from './components/Searchbox';
+import Carousel from './components/Carousel/Carousel';
 import Slideshow from './components/Slideshow/Slideshow';
 import FavoritesList from './components/Favorites/FavoritesList';
 
@@ -28,6 +29,7 @@ function App() {
       <Title />
       {favContext.showFavItems && <FavoritesList />}
       <Menue onClick={menueModalToggleHandler} />
+      <Carousel  content={DUMMY_ARRAY}/>
       <Searchbox />
       <Slideshow content={DUMMY_ARRAY} />
     </div>

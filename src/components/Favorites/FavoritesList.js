@@ -10,12 +10,12 @@ const FavoritesList = (props) => {
   const favContext = useContext(FavoritesContext);
   return (
     <React.Fragment>
-      <Backdrop onClose={favContext.favoritesToggleHandler}/>
+      <Backdrop onClose={favContext.favoritesToggleHandler} />
       <div className={styles.container}>
-        <div className={styles.btnContainer}>
+        <div className={styles['button-container']}>
           <button
             onClick={favContext.favoritesToggleHandler}
-            className={styles.closeWishlistBtn}
+            className={styles['close-favoritesList-button']}
           >
             X
           </button>

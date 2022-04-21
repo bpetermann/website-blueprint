@@ -2,7 +2,7 @@
   box-sizing: border-box;
   width: 30%;
   display: grid;
-  grid-template-columns: 20% 60% 20%;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   grid-template-areas:
     '. . button'
@@ -18,6 +18,8 @@
 
 .wishlist-button {
   grid-area: button;
+  align-self: center;
+  justify-self: center;
   width: 2rem;
   height: 2rem;
   padding: 0;
@@ -36,7 +38,6 @@
 }
 
 .heart-image {
-  padding-top: 0.5rem;
   width: 2rem;
   height: 2rem;
   filter: invert(48%) sepia(5%) saturate(17%) hue-rotate(358deg) brightness(95%)
