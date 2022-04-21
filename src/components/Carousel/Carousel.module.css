@@ -1,4 +1,4 @@
-.containerAll {
+.container {
   margin-top: 2rem;
   display: grid;
   width: 100%;
@@ -7,10 +7,11 @@
   grid-template-areas: 'button-down carousel button-up';
 }
 
-.container {
+.content-container {
   grid-area: carousel;
   height: 13rem;
   display: flex;
+  scroll-behavior: smooth;
   flex-wrap: nowrap;
   overflow-x: auto;
   scrollbar-width: none;
@@ -18,25 +19,6 @@
 
 .container::-webkit-scrollbar {
   display: none;
-}
-
-.card {
-  box-sizing: border-box;
-  flex: 0 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 75%;
-  min-width: 10rem;
-  margin-right: 1rem;
-  background-color: #fff;
-  border: 0.0625rem solid #d0d1d3;
-}
-
-@media (min-width: 40rem) {
-  .card {
-    width: 32%;
-  }
 }
 
 .count-up,

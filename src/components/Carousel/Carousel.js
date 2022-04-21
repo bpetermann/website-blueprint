@@ -1,20 +1,21 @@
 import React, { useRef } from 'react';
 import styles from './Carousel.module.css';
 
+import CarouselItem from './CarouselItem';
+
 const Carousel = (props) => {
   const scrollbar = useRef(null);
 
   const scrollDownHandler = () => {
-    console.log(scrollbar.current);
-    scrollbar.current.scrollLeft -= 100;
+    scrollbar.current.scrollLeft -= 235;
   };
 
   const scrollUpHandler = () => {
-    scrollbar.current.scrollLeft += 100;
+    scrollbar.current.scrollLeft += 235;
   };
 
   return (
-    <div className={styles.containerAll}>
+    <div className={styles.container}>
       <button className={styles['count-down']}>
         <img
           src={require('../../images/arrow-left.png')}
@@ -24,14 +25,8 @@ const Carousel = (props) => {
         />
       </button>
 
-      <div ref={scrollbar} className={styles.container}>
-        {props.content.map((item) => {
-          return (
-            <div className={styles.card} key={item}>
-              <h2>{item}</h2>
-            </div>
-          );
-        })}
+      <div ref={scrollbar} className={styles['content-container']}>
+        <CarouselItem content={props.content} />
       </div>
       <button className={styles['count-up']}>
         <img

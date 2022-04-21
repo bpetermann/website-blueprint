@@ -21,7 +21,7 @@ export const FavoritesContextProvider = (props) => {
   const favoritesToggleHandler = (origin) => {
     setshowFavItems((prevState) => !prevState);
   };
-  console.log(favoriteItems);
+
   return (
     <FavoritesContext.Provider
       value={{

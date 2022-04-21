@@ -28,7 +28,7 @@
   }
 }
 
-.wish-list {
+.favorites-list {
   width: 2rem;
   height: 2rem;
   padding: 0;
@@ -37,18 +37,19 @@
   border: none;
 }
 
-.wish-list img {
+.favorites-list img {
   width: 2rem;
   height: 2rem;
   filter: invert(48%) sepia(5%) saturate(17%) hue-rotate(358deg) brightness(95%)
     contrast(86%);
 }
 
-.wishList img:hover {
+.favorites-list img:hover {
   filter: none;
+  cursor: pointer;
 }
 
-.wishlist-counter {
+.favorites-counter {
   padding: 0 0.4rem;
   position: relative;
   top: -2.5rem;

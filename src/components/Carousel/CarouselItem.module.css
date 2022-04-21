@@ -1,0 +1,56 @@
+.card {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  width: 75%;
+  min-width: 10rem;
+  margin-right: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+    '. . button'
+    '. content . '
+    '. . .';
+  font-size: 1.75rem;
+  opacity: 0.8;
+  border: 0.0625rem solid #d0d1d3;
+  background-color: #fff;
+}
+
+.card:first-of-type {
+  margin-left: 1rem;
+}
+
+@media (min-width: 40rem) {
+  .card {
+    width: 31%;
+  }
+}
+
+.favorites-button {
+  grid-area: button;
+  align-self: center;
+  justify-self: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+}
+
+.favorites-button:hover {
+  cursor: pointer;
+}
+
+.content {
+  grid-area: content;
+  align-self: center;
+  justify-self: center;
+}
+
+.heart-image {
+  width: 2rem;
+  height: 2rem;
+  filter: invert(48%) sepia(5%) saturate(17%) hue-rotate(358deg) brightness(95%)
+    contrast(86%);
+}

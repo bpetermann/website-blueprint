@@ -4,7 +4,8 @@ import styles from './Slideshow.module.css';
 import SlideshowItem from './SlideshowItem';
 
 const Slideshow = (props) => {
-  const [slideshowArray, setslideshowArray] = useState(props.content);
+  const initialContentArray = [...props.content];
+  const [slideshowArray, setslideshowArray] = useState(initialContentArray);
 
   const oneSlideUpHandler = () => {
     const firstElement = slideshowArray.shift();

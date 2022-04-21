@@ -16,7 +16,7 @@
   background-color: #fff;
 }
 
-.wishlist-button {
+.favorites-button {
   grid-area: button;
   align-self: center;
   justify-self: center;
@@ -27,7 +27,7 @@
   border: none;
 }
 
-.wishlist-button:hover {
+.favorites-button:hover {
   cursor: pointer;
 }
 
