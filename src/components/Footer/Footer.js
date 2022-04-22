@@ -1,15 +1,13 @@
 import React from 'react';
 import styles from './Footer.module.css';
+import Accordion from './Accordion';
 
-const Footer = (props) => {
+const Footer = () => {
   return (
     <div className={styles['wrapper']}>
       <div className={styles['container']}>
         <div className={styles['headline-container']}>
-          <h3> Container</h3>
-          <h4>Content 1</h4>
-          <h4>Content 2</h4>
-          <h4>Content 3</h4>
+          <Accordion />
         </div>
         <nav className={styles['nav-container']}>
           <a href='https://github.com/bpetermann'>Home</a>
