@@ -10,7 +10,7 @@ import Carousel from './components/Carousel/Carousel';
 import ImageBox from './components/ImageBox/ImageBox';
 import Slideshow from './components/Slideshow/Slideshow';
 import FavoritesList from './components/Favorites/FavoritesList';
-
+import Footer from './components/Footer/Footer';
 import FavoritesContext from './store/favorites-context';
 
 const DUMMY_ARRAY = [1, 2, 3, 4, 5, 6];
@@ -24,17 +24,20 @@ function App() {
   };
 
   return (
-    <div className={styles.container}>
-      {showMenueModal && <MenueModal onClick={menueModalToggleHandler} />}
-      <AdBanner />
-      <Title />
-      {favContext.showFavItems && <FavoritesList />}
-      <Menue onClick={menueModalToggleHandler} />
-      <Carousel content={DUMMY_ARRAY} />
-      <Searchbox />
-      <ImageBox />
-      <Slideshow content={DUMMY_ARRAY_2} />
-    </div>
+    <React.Fragment>
+      <div className={styles.container}>
+        {showMenueModal && <MenueModal onClick={menueModalToggleHandler} />}
+        <AdBanner />
+        <Title />
+        {favContext.showFavItems && <FavoritesList />}
+        <Menue onClick={menueModalToggleHandler} />
+        <Slideshow content={DUMMY_ARRAY} />
+        <Searchbox />
+        <ImageBox />
+        <Carousel content={DUMMY_ARRAY_2} />
+      </div>
+      <Footer />
+    </React.Fragment>
   );
 }
 
