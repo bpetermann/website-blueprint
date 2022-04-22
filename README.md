@@ -5,8 +5,7 @@
 ### Description
 - The idea was to create a kind of website blueprint
 - You can also just take individual components to use in other apps/sites
-- [View Live](https://bpetermann.github.io/memory-card/)
-
+- View Live: [here](https://bpetermann.github.io/website-blueprint/)
 
 ## Getting started
 
