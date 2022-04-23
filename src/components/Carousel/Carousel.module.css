@@ -51,3 +51,8 @@
 .count-up-button {
   left: 56rem;
 }
+
+.count-up-button:hover,
+.count-down-button:hover {
+  filter: none;
+}
