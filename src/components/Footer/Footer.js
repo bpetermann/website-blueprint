@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <div className={styles['wrapper']}>
       <div className={styles['container']}>
-        <div className={styles['headline-container']}>
+        <div className={styles['accordeon-container']}>
           <Accordion />
         </div>
         <nav className={styles['nav-container']}>

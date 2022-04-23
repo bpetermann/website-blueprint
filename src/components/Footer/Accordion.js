@@ -11,16 +11,22 @@ export default function SimpleAccordion() {
     <div>
       <Accordion
         sx={{
-          color: 'white',
+          color: '#d0d1d3',
           background: '#1e1e1e',
         }}
       >
         <AccordionSummary
-          expandIcon={<KeyboardArrowDownIcon style={{ color: '#fff' }} />}
+          expandIcon={<KeyboardArrowDownIcon style={{ color: '#d0d1d3' }} />}
           aria-controls='panel1a-content'
           id='panel1a-header'
         >
-          <Typography>Some Content</Typography>
+          <Typography
+            sx={{
+              fontWeight: '600',
+            }}
+          >
+            Some Content
+          </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
@@ -31,16 +37,50 @@ export default function SimpleAccordion() {
       </Accordion>
       <Accordion
         sx={{
-          color: 'white',
+          color: '#d0d1d3',
           background: '#1e1e1e',
+          borderTop: '0.0625rem solid #2b2e32',
         }}
       >
         <AccordionSummary
-          expandIcon={<KeyboardArrowDownIcon style={{ color: '#fff' }} />}
+          expandIcon={<KeyboardArrowDownIcon style={{ color: '#d0d1d3' }} />}
           aria-controls='panel2a-content'
           id='panel2a-header'
         >
-          <Typography>Some Content</Typography>
+          <Typography
+            sx={{
+              fontWeight: '600',
+            }}
+          >
+            Some Content
+          </Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+            malesuada lacus ex, sit amet blandit leo lobortis eget.
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+      <Accordion
+        sx={{
+          color: '#d0d1d3',
+          background: '#1e1e1e',
+          borderTop: '0.0625rem solid #2b2e32',
+        }}
+      >
+        <AccordionSummary
+          expandIcon={<KeyboardArrowDownIcon style={{ color: '#d0d1d3' }} />}
+          aria-controls='panel2a-content'
+          id='panel2a-header'
+        >
+          <Typography
+            sx={{
+              fontWeight: '600',
+            }}
+          >
+            Some Content
+          </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>

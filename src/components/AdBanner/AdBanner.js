@@ -1,10 +1,10 @@
 import React from 'react';
 import styles from './AdBanner.module.css';
 
-const AdBanner = (props) => {
+const AdBanner = () => {
   return (
-    <div className={styles.container}>
-      <h2>Web Banner</h2>
+    <div className={styles['container']}>
+      <p>Web Banner</p>
     </div>
   );
 };

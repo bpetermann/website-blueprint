@@ -8,6 +8,10 @@
   margin: 1rem auto;
 }
 
+.container p {
+  font-size: 1.75rem;
+}
+
 @media (min-width: 40rem) {
   .container {
     width: 65%;
