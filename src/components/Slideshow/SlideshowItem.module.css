@@ -80,6 +80,11 @@
     z-index: 30;
     opacity: 1;
   }
+
+  .content-container:hover {
+    opacity: 1;
+    transform: scale(1.08);
+  }
 }
 
 @media (min-width: 60rem) {
@@ -111,11 +116,11 @@
     margin-right: 0rem;
     width: 30%;
   }
-}
 
-.content-container:hover {
-  opacity: 1;
-  transform: scale(1.08);
+  .content-container:hover {
+    opacity: 1;
+    transform: scale(1.08);
+  }
 }
 
 .bump {

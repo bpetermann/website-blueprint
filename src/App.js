@@ -15,9 +15,13 @@ import FavoritesContext from './store/favorites-context';
 
 const DUMMY_ARRAY = [1, 2, 3, 4, 5, 6];
 const DUMMY_ARRAY_2 = [7, 8, 9, 10, 11, 12];
+
 function App() {
   const [showMenueModal, setShowMenueModal] = useState(false);
   const favContext = useContext(FavoritesContext);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  console.log(isLoggedIn);
 
   const menueModalToggleHandler = () => {
     setShowMenueModal((prevState) => !prevState);
@@ -28,7 +32,7 @@ function App() {
       <div className={styles.container}>
         {showMenueModal && <MenueModal onClick={menueModalToggleHandler} />}
         <AdBanner />
-        <Title />
+        <Title setIsLoggedIn={setIsLoggedIn} />
         {favContext.showFavItems && <FavoritesList />}
         <Menue onClick={menueModalToggleHandler} />
         <Slideshow content={DUMMY_ARRAY} />
