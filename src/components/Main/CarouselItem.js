@@ -1,22 +1,22 @@
 import React, { useContext } from 'react';
 
-import styles from './SlideshowItem.module.css';
+import styles from './CarouselItem.module.css';
 import FavoritesContext from '../../store/favorites-context';
 
-const SlideshowItem = (props) => {
+const CarouselItem = (props) => {
   const favContext = useContext(FavoritesContext);
   return (
     <React.Fragment>
       {props.content.map((item) => {
         return (
-          <div className={styles['content-container']} key={item}>
+          <div className={styles.card} key={item}>
             {favContext.favoriteItems.includes(item) ? (
               <button
                 className={styles['favorites-button']}
                 onClick={() => favContext.removeFromFavorites(item)}
               >
                 <img
-                  src={require('../../images/heart-full.png')}
+                  src={require('../../Assets/images/heart-full.png')}
                   alt={'Remove Item to your Favorites'}
                   className={`${styles['heart-image']} ${styles.bump}`}
                 />
@@ -27,7 +27,7 @@ const SlideshowItem = (props) => {
                 onClick={() => favContext.addToFavorites(item)}
               >
                 <img
-                  src={require('../../images/heart.png')}
+                  src={require('../../Assets/images/heart.png')}
                   alt={'Add Item to your Favorites'}
                   className={styles['heart-image']}
                 />
@@ -42,4 +42,4 @@ const SlideshowItem = (props) => {
   );
 };
 
-export default SlideshowItem;
+export default CarouselItem;

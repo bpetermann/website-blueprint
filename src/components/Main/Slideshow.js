@@ -25,7 +25,7 @@ const Slideshow = (props) => {
     <div className={styles.container}>
       <button className={styles['count-down']}>
         <img
-          src={require('../../images/arrow-left.png')}
+          src={require('../../Assets/images/arrow-left.png')}
           alt='Arrow key-left'
           className={styles['count-down-button']}
           onClick={oneSlideDownHandler}
@@ -34,7 +34,7 @@ const Slideshow = (props) => {
       <SlideshowItem content={slideshowOutput} />
       <button className={styles['count-up']}>
         <img
-          src={require('../../images/arrow-right.png')}
+          src={require('../../Assets/images/arrow-right.png')}
           alt='Arrow key-right'
           className={styles['count-up-button']}
           onClick={oneSlideUpHandler}

@@ -26,6 +26,7 @@ export const FavoritesContextProvider = (props) => {
     <FavoritesContext.Provider
       value={{
         favoriteItems: favoriteItems,
+        setFavoriteItems: setFavoriteItems,
         showFavItems: showFavItems,
         addToFavorites: addToFavsHandler,
         removeFromFavorites: removeFromFavsHandler,

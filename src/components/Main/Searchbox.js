@@ -6,7 +6,7 @@ const Searchbox = () => {
       <div className={styles.searchBackground}>
         <div className={styles['search-container']}>
           <img
-            src={require('../../images/glass.png')}
+            src={require('../../Assets/images/glass.png')}
             alt='Magnifying glass'
             className={styles.glassImage}
           />

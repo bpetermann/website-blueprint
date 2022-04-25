@@ -36,7 +36,8 @@
   font-size: 1.75rem;
 }
 
-.login {
+.login,
+.logout {
   background: #666;
   border-radius: 0.8rem;
   border: none;
