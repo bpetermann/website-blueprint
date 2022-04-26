@@ -3,7 +3,7 @@
   width: 100%;
   grid-template-rows: 3rem;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-areas: 'logo greeting button';
+  grid-template-areas: 'logo . button';
   background-color: #fff;
 }
 
@@ -16,13 +16,15 @@
 }
 
 .user-greeting {
-  grid-area: greeting;
-  height: 100%;
   font-size: 1.25rem;
   align-self: center;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #fff;
+  border: 0.0625rem solid #d0d1d3;
+  padding: 0rem 1rem;
+  margin-bottom: 1rem;
 }
 
 .account-container {
