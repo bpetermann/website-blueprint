@@ -82,8 +82,10 @@ const Title = ({ isLoggedIn, setIsLoggedIn }) => {
   return (
     <React.Fragment>
       {userName && (
+        <div className={styles['user-greeting-background']}>
         <div className={styles['user-greeting']}>
           <p>Hello, {userName}</p>
+        </div>
         </div>
       )}
       <div className={styles.container}>

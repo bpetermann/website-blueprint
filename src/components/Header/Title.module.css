@@ -2,9 +2,15 @@
   display: grid;
   width: 100%;
   grid-template-rows: 3rem;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 2fr;
   grid-template-areas: 'logo . button';
   background-color: #fff;
+}
+
+@media (min-width: 40rem) {
+  .container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 
 .logo-container {
@@ -16,14 +22,13 @@
 }
 
 .user-greeting {
-  font-size: 1.25rem;
-  align-self: center;
+  font-size: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #fff;
   border: 0.0625rem solid #d0d1d3;
-  padding: 0rem 1rem;
+  padding: 0rem 0.5rem;
   margin-bottom: 1rem;
 }
 
@@ -32,6 +37,7 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  padding-right: 1rem;
 }
 
 .logo {
