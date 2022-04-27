@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/website-blueprint/static/css/main.fb702013.css",
-    "main.js": "/website-blueprint/static/js/main.5ffc48ed.js",
+    "main.css": "/website-blueprint/static/css/main.e714e3a5.css",
+    "main.js": "/website-blueprint/static/js/main.1f43bd48.js",
     "static/media/vienna.png": "/website-blueprint/static/media/vienna.498facaf062398757735.png",
     "index.html": "/website-blueprint/index.html",
-    "main.fb702013.css.map": "/website-blueprint/static/css/main.fb702013.css.map",
-    "main.5ffc48ed.js.map": "/website-blueprint/static/js/main.5ffc48ed.js.map"
+    "main.e714e3a5.css.map": "/website-blueprint/static/css/main.e714e3a5.css.map",
+    "main.1f43bd48.js.map": "/website-blueprint/static/js/main.1f43bd48.js.map"
   },
   "entrypoints": [
-    "static/css/main.fb702013.css",
-    "static/js/main.5ffc48ed.js"
+    "static/css/main.e714e3a5.css",
+    "static/js/main.1f43bd48.js"
   ]
 }
