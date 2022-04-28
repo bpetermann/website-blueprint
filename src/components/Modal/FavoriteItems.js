@@ -15,7 +15,7 @@ const FavoriteItems = () => {
               onClick={() => favContext.removeFromFavorites(item)}
             >
               <img
-                src={require('../../Assets/images/heart-full.png')}
+                src={require('../../assets/images/heart-full.png')}
                 alt={item.name}
                 className={styles['heart-image']}
               />

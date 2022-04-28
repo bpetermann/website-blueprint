@@ -108,7 +108,7 @@ const Title = ({ isLoggedIn, setIsLoggedIn }) => {
             className={styles['favorites-list']}
           >
             <img
-              src={require('../../Assets/images/heart.png')}
+              src={require('../../assets/images/heart.png')}
               alt={'Favorites button'}
               className={styles.image}
             />

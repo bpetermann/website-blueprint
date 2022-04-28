@@ -16,7 +16,7 @@ const CarouselItem = (props) => {
                 onClick={() => favContext.removeFromFavorites(item)}
               >
                 <img
-                  src={require('../../Assets/images/heart-full.png')}
+                  src={require('../../assets/images/heart-full.png')}
                   alt={'Remove Item to your Favorites'}
                   className={`${styles['heart-image']} ${styles.bump}`}
                 />
@@ -27,7 +27,7 @@ const CarouselItem = (props) => {
                 onClick={() => favContext.addToFavorites(item)}
               >
                 <img
-                  src={require('../../Assets/images/heart.png')}
+                  src={require('../../assets/images/heart.png')}
                   alt={'Add Item to your Favorites'}
                   className={styles['heart-image']}
                 />
