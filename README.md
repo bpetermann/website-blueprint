@@ -21,7 +21,7 @@ npm start
 
 - [React](https://reactjs.org/)
 - [Firebase](https://firebase.google.com/)
-- [Material UI](https://https://mui.com/)
+- [Material UI](https://mui.com/)
 - [React Parallax](https://www.npmjs.com/package/react-parallax/)
 
 ### Thanks

@@ -7,6 +7,7 @@
   width: 100%;
   height: 20vh;
   min-height: 20rem;
+  margin-top: 1rem;
 }
 
 .searchBackground {
@@ -63,6 +64,9 @@ input:focus {
 @media (min-width: 40rem) {
   .searchBackground {
     width: 75%;
+  }
+  .container {
+    margin-top: 0rem;
   }
 }
 
