@@ -12,7 +12,7 @@ export default function SimpleAccordion() {
       <Accordion
         sx={{
           color: '#d0d1d3',
-          background: '#1e1e1e',
+          background: '#343a40',
         }}
       >
         <AccordionSummary
@@ -38,7 +38,7 @@ export default function SimpleAccordion() {
       <Accordion
         sx={{
           color: '#d0d1d3',
-          background: '#1e1e1e',
+          background: '#343a40',
           borderTop: '0.0625rem solid #2b2e32',
         }}
       >
@@ -65,7 +65,7 @@ export default function SimpleAccordion() {
       <Accordion
         sx={{
           color: '#d0d1d3',
-          background: '#1e1e1e',
+          background: '#343a40',
           borderTop: '0.0625rem solid #2b2e32',
         }}
       >
