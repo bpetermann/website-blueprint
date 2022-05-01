@@ -18,7 +18,7 @@ function App() {
 
   return (
     <React.Fragment>
-      <div className={styles.container}>
+      <div className={styles['container']}>
         <Header
           setIsLoggedIn={setIsLoggedIn}
           isLoggedIn={isLoggedIn}

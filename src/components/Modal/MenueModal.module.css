@@ -57,3 +57,25 @@
   font-weight: 700;
   margin-bottom: 1rem;
 }
+
+.darkmode-toggle-button {
+  margin-bottom: 1rem;
+  align-self: flex-start;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  width: 75%;
+  max-width: 10rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: inherit;
+  font-family: inherit;
+  margin-bottom: 1rem;
+}
+
+.darkmode-toggle-button:hover {
+  opacity: 0.8;
+}
