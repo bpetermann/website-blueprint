@@ -12,11 +12,10 @@ export const DarkmodeContextProvider = (props) => {
   };
 
   useEffect(() => {
-    console.log('is running');
     if (darkmode) {
-      document.body.classList.add('dark-content');
+      document.body.classList.add('darkmode');
     } else {
-      document.body.classList.remove('dark-content');
+      document.body.classList.remove('darkmode');
     }
   }, [darkmode]);
 

@@ -1,21 +1,41 @@
+import React, { useContext } from 'react';
+
 import styles from './Searchbox.module.css';
+import DarkmodeContext from '../../store/darkmode-context';
 
 const Searchbox = () => {
+  const darkmodeCtx = useContext(DarkmodeContext);
   return (
-    <div className={styles.container}>
+    <div
+      className={`${styles.container} ${
+        darkmodeCtx.darkmode ? styles.darkmode : ''
+      }`}
+    >
       <div className={styles.searchBackground}>
-        <div className={styles['search-container']}>
+        <div
+          className={`${styles['search-container']} ${
+            darkmodeCtx.darkmode ? styles.darkmode : ''
+          }`}
+        >
           <img
             src={require('../../assets/images/glass.png')}
             alt='Magnifying glass'
             className={styles.glassImage}
           />
           <input
-            className={styles['search-input']}
+            className={`${styles['search-input']} ${
+              darkmodeCtx.darkmode ? styles.darkmode : ''
+            }`}
             type='text'
             placeholder='Enter Location'
           />
-          <button className={styles.searchBtn}>Search</button>
+          <button
+            className={`${styles['searchBtn']} ${
+              darkmodeCtx.darkmode ? styles.darkbutton : ''
+            }`}
+          >
+            Search
+          </button>
         </div>
       </div>
     </div>

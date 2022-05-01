@@ -13,6 +13,7 @@ export default function SimpleAccordion() {
         sx={{
           color: '#d0d1d3',
           background: '#2b2a33',
+          borderTop: '0.0625rem solid #59585f',
         }}
       >
         <AccordionSummary

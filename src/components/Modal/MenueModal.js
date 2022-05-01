@@ -13,7 +13,11 @@ const MenueModal = (props) => {
   return (
     <React.Fragment>
       <Backdrop onClose={props.onClick} />
-      <div className={styles.container}>
+      <div
+        className={`${styles.container} ${
+          darkmodeCtx.darkmode ? styles.darkmode : ''
+        }`}
+      >
         <button className={styles['close-button']} onClick={props.onClick}>
           X
         </button>
@@ -33,11 +37,6 @@ const MenueModal = (props) => {
             Darkmode <DarkModeIcon />
           </button>
         )}
-
-        <span>Headline 1</span>
-        <span>Headline 2</span>
-        <span>Headline 3</span>
-        <span>Headline 4</span>
       </div>
     </React.Fragment>
   );

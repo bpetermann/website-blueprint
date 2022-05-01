@@ -75,3 +75,12 @@ input:focus {
     width: 50%;
   }
 }
+
+.darkmode {
+  background-color: #42414d;
+  color: #fff;
+}
+
+.darkbutton {
+  background-color: #2b2a33;
+}

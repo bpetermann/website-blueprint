@@ -2,14 +2,21 @@ import React, { useContext } from 'react';
 
 import styles from './CarouselItem.module.css';
 import FavoritesContext from '../../store/favorites-context';
+import DarkmodeContext from '../../store/darkmode-context';
 
 const CarouselItem = (props) => {
   const favContext = useContext(FavoritesContext);
+  const darkmodeCtx = useContext(DarkmodeContext);
   return (
     <React.Fragment>
       {props.content.map((item) => {
         return (
-          <div className={styles.card} key={item}>
+          <div
+            className={`${styles.card} ${
+              darkmodeCtx.darkmode ? styles.darkmode : ''
+            }`}
+            key={item}
+          >
             {favContext.favoriteItems.includes(item) ? (
               <button
                 className={styles['favorites-button']}

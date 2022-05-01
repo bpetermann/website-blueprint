@@ -1,4 +1,5 @@
 .container {
+  box-sizing: border-box;
   display: grid;
   width: 100%;
   grid-template-rows: 3rem;
@@ -27,7 +28,6 @@
   justify-content: center;
   align-items: center;
   background-color: #fff;
-  border: 0.0625rem solid #d0d1d3;
   padding: 0rem 0.5rem;
   margin-bottom: 1rem;
 }
@@ -45,7 +45,7 @@
 
 .login,
 .logout {
-  background: #666;
+  background: #42414d;
   border-radius: 0.8rem;
   border: none;
   height: 2rem;
@@ -58,8 +58,9 @@
   font-size: 1rem;
 }
 
-.login:hover {
-  background-color: #000;
+.login:hover,
+.logout:hover {
+  opacity: 0.8;
 }
 
 .favorites-list {
@@ -92,4 +93,8 @@
   font-size: 0.9rem;
   font-weight: 600;
   color: #fff;
+}
+
+.darkmode {
+  background-color: #42414d;
 }
