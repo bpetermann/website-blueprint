@@ -1,30 +1,29 @@
 import React, { useContext } from 'react';
-
 import styles from './Title.module.css';
 import FavoritesContext from '../../store/favorites-context';
 import DarkmodeContext from '../../store/darkmode-context';
+import AuthContext from '../../store/auth-context';
 
-const Title = ({ signInHandler, signOutHandler, isLoggedIn, userName }) => {
-  const favContext = useContext(FavoritesContext);
-  const darkmodeCtx = useContext(DarkmodeContext);
-  const totalFavItems = favContext.favoriteItems.length;
+const Title = () => {
+  const { favoriteItems, favoritesToggleHandler } =
+    useContext(FavoritesContext);
+  const { darkmode } = useContext(DarkmodeContext);
+  const { isLoggedIn, signInHandler, signOutHandler, userName } =
+    useContext(AuthContext);
+  const totalFavItems = favoriteItems.length;
 
   return (
     <>
       {userName && (
         <div
           className={`${styles['user-greeting']} ${
-            darkmodeCtx.darkmode ? styles.darkmode : ''
+            darkmode ? styles.darkmode : ''
           }`}
         >
           <p>Hello, {userName}</p>
         </div>
       )}
-      <div
-        className={`${styles.container} ${
-          darkmodeCtx.darkmode ? styles.darkmode : ''
-        }`}
-      >
+      <div className={`${styles.container} ${darkmode ? styles.darkmode : ''}`}>
         <div className={styles['logo-container']}>
           <span className={styles['logo']}>Blueprint</span>
         </div>
@@ -40,7 +39,7 @@ const Title = ({ signInHandler, signOutHandler, isLoggedIn, userName }) => {
             </button>
           )}
           <button
-            onClick={favContext.favoritesToggleHandler}
+            onClick={favoritesToggleHandler}
             className={styles['favorites-list']}
           >
             <img

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Parallax } from 'react-parallax';
 import styles from './ImageBox.module.css';
-
 import image from '../../assets/images/vienna.png';
 
 const ImageBox = () => {

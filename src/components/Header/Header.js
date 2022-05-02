@@ -6,27 +6,15 @@ import Title from './Title';
 import Menue from './Menue';
 import FavoritesList from '../Modal/FavoritesList';
 
-const Header = (props) => {
-  const favContext = useContext(FavoritesContext);
+const Header = ({ showMenueModal, menueModalToggle }) => {
+  const { showFavItems } = useContext(FavoritesContext);
   return (
     <>
       <AdBanner />
-      <Title
-        userName={props.userName}
-        signInHandler={props.signInHandler}
-        signOutHandler={props.signOutHandler}
-        isLoggedIn={props.isLoggedIn}
-      />
-      {props.showMenueModal && (
-        <MenueModal
-          menueModalToggle={props.menueModalToggle}
-          signInHandler={props.signInHandler}
-          signOutHandler={props.signOutHandler}
-          isLoggedIn={props.isLoggedIn}
-        />
-      )}
-      {favContext.showFavItems && <FavoritesList />}
-      <Menue menueModalToggle={props.menueModalToggle} />
+      <Title />
+      {showMenueModal && <MenueModal menueModalToggle={menueModalToggle} />}
+      {showFavItems && <FavoritesList />}
+      <Menue menueModalToggle={menueModalToggle} />
     </>
   );
 };

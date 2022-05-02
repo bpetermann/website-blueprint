@@ -3,16 +3,12 @@ import styles from './Menue.module.css';
 import DarkmodeContext from '../../store/darkmode-context';
 
 const Menue = ({ menueModalToggle }) => {
-  const darkmodeCtx = useContext(DarkmodeContext);
+  const { darkmode } = useContext(DarkmodeContext);
   return (
-    <div
-      className={`${styles.container} ${
-        darkmodeCtx.darkmode ? styles.darkmode : ''
-      }`}
-    >
+    <div className={`${styles.container} ${darkmode ? styles.darkmode : ''}`}>
       <button
         className={`${styles['toggle-button']} ${
-          darkmodeCtx.darkmode ? styles.darkmode : ''
+          darkmode ? styles.darkmode : ''
         }`}
         onClick={menueModalToggle}
       >
@@ -22,7 +18,7 @@ const Menue = ({ menueModalToggle }) => {
       </button>
       <input
         className={`${styles['search-input']} ${
-          darkmodeCtx.darkmode ? styles.darkmode : ''
+          darkmode ? styles.darkmode : ''
         }`}
         type='text'
         placeholder='Search'

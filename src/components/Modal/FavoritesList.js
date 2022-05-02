@@ -8,19 +8,15 @@ import FavoritesContext from '../../store/favorites-context';
 import DarkmodeContext from '../../store/darkmode-context';
 
 const FavoritesList = () => {
-  const favContext = useContext(FavoritesContext);
-  const darkmodeCtx = useContext(DarkmodeContext);
+  const { favoritesToggleHandler } = useContext(FavoritesContext);
+  const { darkmode } = useContext(DarkmodeContext);
   return (
     <>
-      <Backdrop onClose={favContext.favoritesToggleHandler} />
-      <div
-        className={`${styles.container} ${
-          darkmodeCtx.darkmode ? styles.darkmode : ''
-        }`}
-      >
+      <Backdrop onClose={favoritesToggleHandler} />
+      <div className={`${styles.container} ${darkmode ? styles.darkmode : ''}`}>
         <div className={styles['button-container']}>
           <button
-            onClick={favContext.favoritesToggleHandler}
+            onClick={favoritesToggleHandler}
             className={styles['close-favoritesList-button']}
           >
             X

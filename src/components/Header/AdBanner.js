@@ -1,16 +1,12 @@
-import React, {useContext} from 'react';
+import React, { useContext } from 'react';
 import styles from './AdBanner.module.css';
 import DarkmodeContext from '../../store/darkmode-context';
 
 const AdBanner = () => {
-  const darkmodeCtx = useContext(DarkmodeContext);
+  const { darkmode } = useContext(DarkmodeContext);
 
   return (
-    <div
-    className={`${styles.container} ${
-      darkmodeCtx.darkmode ? styles.darkmode : ''
-    }`}
-  >
+    <div className={`${styles.container} ${darkmode ? styles.darkmode : ''}`}>
       <p>Web Banner</p>
     </div>
   );

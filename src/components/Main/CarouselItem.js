@@ -1,26 +1,25 @@
 import React, { useContext } from 'react';
-
 import styles from './CarouselItem.module.css';
 import FavoritesContext from '../../store/favorites-context';
 import DarkmodeContext from '../../store/darkmode-context';
+import { DUMMY_ARRAY_2 } from '../../data/DummyContent';
 
-const CarouselItem = (props) => {
-  const favContext = useContext(FavoritesContext);
-  const darkmodeCtx = useContext(DarkmodeContext);
+const CarouselItem = () => {
+  const { favoriteItems, removeFromFavorites, addToFavorites } =
+    useContext(FavoritesContext);
+  const { darkmode } = useContext(DarkmodeContext);
   return (
     <>
-      {props.content.map((item) => {
+      {DUMMY_ARRAY_2.map((item) => {
         return (
           <div
-            className={`${styles.card} ${
-              darkmodeCtx.darkmode ? styles.darkmode : ''
-            }`}
+            className={`${styles.card} ${darkmode ? styles.darkmode : ''}`}
             key={item}
           >
-            {favContext.favoriteItems.includes(item) ? (
+            {favoriteItems.includes(item) ? (
               <button
                 className={styles['favorites-button']}
-                onClick={() => favContext.removeFromFavorites(item)}
+                onClick={() => removeFromFavorites(item)}
               >
                 <img
                   src={require('../../assets/images/heart-full.png')}
@@ -31,7 +30,7 @@ const CarouselItem = (props) => {
             ) : (
               <button
                 className={styles['favorites-button']}
-                onClick={() => favContext.addToFavorites(item)}
+                onClick={() => addToFavorites(item)}
               >
                 <img
                   src={require('../../assets/images/heart.png')}

@@ -1,17 +1,16 @@
 import React from 'react';
-
 import Searchbox from './Searchbox';
 import Carousel from './Carousel';
 import ImageBox from './ImageBox';
 import Slideshow from './Slideshow';
 
-const Main = (props) => {
+const Main = () => {
   return (
     <>
-      <Slideshow content={props.content[0]} />
+      <Slideshow />
       <Searchbox />
       <ImageBox />
-      <Carousel content={props.content[1]} />
+      <Carousel />
     </>
   );
 };

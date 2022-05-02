@@ -1,25 +1,22 @@
 import React, { useContext } from 'react';
-
 import styles from './FavoriteItems.module.css';
 import FavoritesContext from '../../store/favorites-context';
 import DarkmodeContext from '../../store/darkmode-context';
 
 const FavoriteItems = () => {
-  const favContext = useContext(FavoritesContext);
-  const darkmodeCtx = useContext(DarkmodeContext);
+  const { favoriteItems, removeFromFavorites } = useContext(FavoritesContext);
+  const { darkmode } = useContext(DarkmodeContext);
   return (
     <>
-      {favContext.favoriteItems.map((item) => {
+      {favoriteItems.map((item) => {
         return (
           <div
-            className={`${styles.container} ${
-              darkmodeCtx.darkmode ? styles.darkmode : ''
-            }`}
+            className={`${styles.container} ${darkmode ? styles.darkmode : ''}`}
             key={item}
           >
             <button
               className={styles['wishlist-button']}
-              onClick={() => favContext.removeFromFavorites(item)}
+              onClick={() => removeFromFavorites(item)}
             >
               <img
                 src={require('../../assets/images/heart-full.png')}

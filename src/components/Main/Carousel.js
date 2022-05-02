@@ -1,6 +1,5 @@
 import React, { useRef } from 'react';
 import styles from './Carousel.module.css';
-
 import CarouselItem from './CarouselItem';
 
 const Carousel = (props) => {

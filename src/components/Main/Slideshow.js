@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-
 import styles from './Slideshow.module.css';
 import SlideshowItem from './SlideshowItem';
+import { DUMMY_ARRAY } from '../../data/DummyContent';
 
-const Slideshow = (props) => {
-  const initialContentArray = [...props.content];
-  const [slideshowArray, setslideshowArray] = useState(initialContentArray);
+const Slideshow = () => {
+  const [slideshowArray, setslideshowArray] = useState(DUMMY_ARRAY);
 
   const oneSlideUpHandler = () => {
     const firstElement = slideshowArray.shift();

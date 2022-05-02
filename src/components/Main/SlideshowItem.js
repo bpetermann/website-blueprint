@@ -4,16 +4,16 @@ import styles from './SlideshowItem.module.css';
 import FavoritesContext from '../../store/favorites-context';
 import DarkmodeContext from '../../store/darkmode-context';
 
-const SlideshowItem = (props) => {
+const SlideshowItem = ({ content }) => {
   const favContext = useContext(FavoritesContext);
-  const darkmodeCtx = useContext(DarkmodeContext);
+  const { darkmode } = useContext(DarkmodeContext);
   return (
     <>
-      {props.content.map((item) => {
+      {content.map((item) => {
         return (
           <div
             className={`${styles['content-container']} ${
-              darkmodeCtx.darkmode ? styles.darkmode : ''
+              darkmode ? styles.darkmode : ''
             }`}
             key={item}
           >

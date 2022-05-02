@@ -4,17 +4,13 @@ import styles from './Searchbox.module.css';
 import DarkmodeContext from '../../store/darkmode-context';
 
 const Searchbox = () => {
-  const darkmodeCtx = useContext(DarkmodeContext);
+  const { darkmode } = useContext(DarkmodeContext);
   return (
-    <div
-      className={`${styles.container} ${
-        darkmodeCtx.darkmode ? styles.darkmode : ''
-      }`}
-    >
+    <div className={`${styles.container} ${darkmode ? styles.darkmode : ''}`}>
       <div className={styles.searchBackground}>
         <div
           className={`${styles['search-container']} ${
-            darkmodeCtx.darkmode ? styles.darkmode : ''
+            darkmode ? styles.darkmode : ''
           }`}
         >
           <img
@@ -24,14 +20,14 @@ const Searchbox = () => {
           />
           <input
             className={`${styles['search-input']} ${
-              darkmodeCtx.darkmode ? styles.darkmode : ''
+              darkmode ? styles.darkmode : ''
             }`}
             type='text'
             placeholder='Enter Location'
           />
           <button
             className={`${styles['searchBtn']} ${
-              darkmodeCtx.darkmode ? styles.darkbutton : ''
+              darkmode ? styles.darkbutton : ''
             }`}
           >
             Search
