@@ -49,7 +49,9 @@ function App() {
     const favorites = data.docs.map((doc) => doc.data().favorites);
     setIsLoggedIn(true);
     if (favorites[0] !== undefined) {
-      favContext.setFavoriteItems([...favorites[0]]);
+      favContext.setFavoriteItems([
+        ...new Set([...favContext.favoriteItems, ...favorites[0]]),
+      ]);
       setIsLoggedIn(true);
     } else {
       createFavoritesDoc();
