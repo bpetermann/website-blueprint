@@ -30,7 +30,7 @@
 
 .wishlist-button {
   padding: 0rem;
-  background-color: #fff;
+  background-color: transparent;
   border: none;
   position: relative;
   top: -5rem;
@@ -46,4 +46,9 @@
   height: 2rem;
   filter: invert(48%) sepia(5%) saturate(17%) hue-rotate(358deg) brightness(95%)
     contrast(86%);
+}
+
+.darkmode {
+  border: none;
+  background-color: #42414d;
 }

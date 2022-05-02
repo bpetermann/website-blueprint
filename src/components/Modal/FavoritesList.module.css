@@ -55,3 +55,7 @@
 .close-favoritesList-button:hover {
   color: #000;
 }
+
+.darkmode {
+  background-color: #2b2a33;
+}

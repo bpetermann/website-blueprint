@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import FavoritesContext from '../../store/favorites-context';
-
 import MenueModal from '../Modal/MenueModal';
 import AdBanner from './AdBanner';
 import Title from './Title';
@@ -10,16 +9,25 @@ import FavoritesList from '../Modal/FavoritesList';
 const Header = (props) => {
   const favContext = useContext(FavoritesContext);
   return (
-    <React.Fragment>
+    <>
       <AdBanner />
       <Title
-        setIsLoggedIn={props.setIsLoggedIn}
+        userName={props.userName}
+        signInHandler={props.signInHandler}
+        signOutHandler={props.signOutHandler}
         isLoggedIn={props.isLoggedIn}
       />
-      {props.showMenueModal && <MenueModal onClick={props.onClick} />}
+      {props.showMenueModal && (
+        <MenueModal
+          menueModalToggle={props.menueModalToggle}
+          signInHandler={props.signInHandler}
+          signOutHandler={props.signOutHandler}
+          isLoggedIn={props.isLoggedIn}
+        />
+      )}
       {favContext.showFavItems && <FavoritesList />}
-      <Menue onClick={props.onClick} />
-    </React.Fragment>
+      <Menue menueModalToggle={props.menueModalToggle} />
+    </>
   );
 };
 

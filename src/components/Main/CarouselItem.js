@@ -8,7 +8,7 @@ const CarouselItem = (props) => {
   const favContext = useContext(FavoritesContext);
   const darkmodeCtx = useContext(DarkmodeContext);
   return (
-    <React.Fragment>
+    <>
       {props.content.map((item) => {
         return (
           <div
@@ -45,7 +45,7 @@ const CarouselItem = (props) => {
           </div>
         );
       })}
-    </React.Fragment>
+    </>
   );
 };
 

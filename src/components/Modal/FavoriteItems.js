@@ -2,14 +2,21 @@ import React, { useContext } from 'react';
 
 import styles from './FavoriteItems.module.css';
 import FavoritesContext from '../../store/favorites-context';
+import DarkmodeContext from '../../store/darkmode-context';
 
 const FavoriteItems = () => {
   const favContext = useContext(FavoritesContext);
+  const darkmodeCtx = useContext(DarkmodeContext);
   return (
-    <React.Fragment>
+    <>
       {favContext.favoriteItems.map((item) => {
         return (
-          <div className={styles.container} key={item}>
+          <div
+            className={`${styles.container} ${
+              darkmodeCtx.darkmode ? styles.darkmode : ''
+            }`}
+            key={item}
+          >
             <button
               className={styles['wishlist-button']}
               onClick={() => favContext.removeFromFavorites(item)}
@@ -24,7 +31,7 @@ const FavoriteItems = () => {
           </div>
         );
       })}
-    </React.Fragment>
+    </>
   );
 };
 

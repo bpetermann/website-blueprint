@@ -26,7 +26,8 @@
   }
 }
 
-.login-button {
+.login-button,
+.logout-button {
   align-self: center;
   width: 80%;
   background-color: #000;
@@ -36,6 +37,11 @@
   color: #fff;
   font-size: 1rem;
   margin-bottom: 2rem;
+}
+
+.login-button:hover,
+.logout-button:hover {
+  opacity: 0.8;
 }
 
 .close-button {

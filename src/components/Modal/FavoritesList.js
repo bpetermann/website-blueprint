@@ -5,13 +5,19 @@ import Backdrop from '../Modal/Backdrop';
 import FavoriteItems from './FavoriteItems';
 
 import FavoritesContext from '../../store/favorites-context';
+import DarkmodeContext from '../../store/darkmode-context';
 
-const FavoritesList = (props) => {
+const FavoritesList = () => {
   const favContext = useContext(FavoritesContext);
+  const darkmodeCtx = useContext(DarkmodeContext);
   return (
-    <React.Fragment>
+    <>
       <Backdrop onClose={favContext.favoritesToggleHandler} />
-      <div className={styles.container}>
+      <div
+        className={`${styles.container} ${
+          darkmodeCtx.darkmode ? styles.darkmode : ''
+        }`}
+      >
         <div className={styles['button-container']}>
           <button
             onClick={favContext.favoritesToggleHandler}
@@ -22,7 +28,7 @@ const FavoritesList = (props) => {
         </div>
         <FavoriteItems />
       </div>
-    </React.Fragment>
+    </>
   );
 };
 

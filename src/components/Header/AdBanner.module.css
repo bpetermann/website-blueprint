@@ -8,11 +8,6 @@
   margin: 1rem auto;
 }
 
-.darkmode {
-  border: none;
-  background-color: #42414d;
-}
-
 .container p {
   font-size: 1.75rem;
 }
@@ -24,4 +19,9 @@
   .container h2 {
     font-size: 1.75rem;
   }
+}
+
+.darkmode {
+  border: none;
+  background-color: #42414d;
 }
