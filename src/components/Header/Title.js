@@ -25,7 +25,13 @@ const Title = () => {
       )}
       <div className={`${styles.container} ${darkmode ? styles.darkmode : ''}`}>
         <div className={styles['logo-container']}>
-          <span className={styles['logo']}>Blueprint</span>
+          <span
+            className={`${styles['logo']} ${
+              darkmode ? styles['darkmode-logo'] : ''
+            }`}
+          >
+            Blueprint
+          </span>
         </div>
 
         <div className={styles['account-container']}>

@@ -2,19 +2,9 @@ import React, { useState, useEffect, useContext } from 'react';
 import FavoritesContext from './favorites-context';
 import { auth, provider, db } from '../firebase/firebase-config';
 import { signInWithPopup, signOut } from 'firebase/auth';
-import {
-  collection,
-  getDocs,
-  addDoc,
-  updateDoc,
-  doc,
-  query,
-  where,
-} from 'firebase/firestore';
+import { updateDoc, getDoc, setDoc, doc } from 'firebase/firestore';
 
-const AuthContext = React.createContext({
-  darkmodeToggleHandler: () => {},
-});
+const AuthContext = React.createContext();
 
 export const AuthContextProvider = (props) => {
   const { favoriteItems, setFavoriteItems } = useContext(FavoritesContext);
@@ -22,31 +12,26 @@ export const AuthContextProvider = (props) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userName, setUserName] = useState(false);
 
-  const favoritesCollectionRef = collection(db, 'favorites');
-
   const createFavoritesDoc = async () => {
-    await addDoc(favoritesCollectionRef, {
+    await setDoc(doc(db, 'favorites', auth.currentUser.uid), {
       user: auth.currentUser.displayName,
-      id: auth.currentUser.uid,
       favorites: favoriteItems,
     });
   };
 
   const getFavorites = async () => {
-    const userRef = query(
-      collection(db, 'favorites'),
-      where('id', '==', auth.currentUser.uid)
-    );
-    const data = await getDocs(userRef);
-    const favorites = data.docs.map((doc) => doc.data().favorites);
-    setIsLoggedIn(true);
-    if (favorites[0] !== undefined) {
-      setFavoriteItems([...new Set([...favoriteItems, ...favorites[0]])]);
+    const userRef = doc(db, 'favorites', auth.currentUser.uid);
+    const data = await getDoc(userRef);
+
+    if (data.exists()) {
+      const favorites = data.data().favorites;
+      setFavoriteItems([...new Set([...favoriteItems, ...favorites])]);
       setIsLoggedIn(true);
     } else {
       createFavoritesDoc();
       setIsLoggedIn(true);
     }
+    setIsLoggedIn(true);
   };
 
   const signInHandler = () => {
@@ -68,15 +53,8 @@ export const AuthContextProvider = (props) => {
     if (isLoggedIn) {
       const updateFavorites = async () => {
         const newFavs = { favorites: favoriteItems };
-        const userRef = query(
-          collection(db, 'favorites'),
-          where('id', '==', auth.currentUser.uid)
-        );
-        const findUsers = await getDocs(userRef);
-        findUsers.forEach(async (user) => {
-          const getUser = doc(db, 'favorites', user.id);
-          await updateDoc(getUser, newFavs);
-        });
+        const getUser = doc(db, 'favorites', auth.currentUser.uid);
+        await updateDoc(getUser, newFavs);
       };
       updateFavorites();
     }
